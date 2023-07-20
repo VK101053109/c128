@@ -1,7 +1,8 @@
-lwx = "";
-lwy = "";
-rwx = "";
-rwy = "";
+lwx= "";
+lwy= "";
+rwx= "";
+rwy= "";
+lwscore="";
 harrysong="";
 petersong="";
 function preload(){
@@ -20,7 +21,7 @@ function modelready(){
     console.log("model is working!!!");
     posenet.on("pose", gotr);
 }
-function(r){
+function gotr(r){
     if (r.length > 0) {
         lwx = r[0].pose.leftWrist.x;
         lwy = r[0].pose.leftWrist.y;
