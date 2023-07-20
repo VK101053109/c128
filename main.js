@@ -6,8 +6,8 @@ lwscore="";
 harrysong="";
 petersong="";
 function preload(){
-    harrysong=loadSong("harrypotter.mp3");
-    petersong=loadSong("peterpan.mp3");
+    harrysong=loadSound("harrypotter.mp3");
+    petersong=loadSound("peterpan.mp3");
 }
 function setup(){
     canvas=createCanvas(600,500);
@@ -16,12 +16,12 @@ function setup(){
     video.size(600,500);
     video.hide();
     posenet = ml5.poseNet(video, modelready);
+    posenet.on("pose",got);
 }
 function modelready(){
     console.log("model is working!!!");
-    posenet.on("pose", gotr);
 }
-function gotr(r){
+function got(r){
     if (r.length > 0) {
         lwx = r[0].pose.leftWrist.x;
         lwy = r[0].pose.leftWrist.y;
