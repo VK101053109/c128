@@ -3,6 +3,7 @@ lwy= "";
 rwx= "";
 rwy= "";
 lwscore="";
+song1_status="";
 harrysong="";
 petersong="";
 function preload(){
